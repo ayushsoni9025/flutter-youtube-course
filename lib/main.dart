@@ -14,10 +14,33 @@ void test(){
 //   final doubleTheAge = age*2;
 //   final ageMinusOne = --age;
 //   print(halfOfAge);
-  final name=['foo','bar','baz'];
-  final length = name.length;
-  name.add('Add');
-  print(name.length);
+
+//list
+  // final name=['foo','bar','baz'];
+  // final length = name.length;
+  // name.add('Add');
+  // print(name.length);
+
+  //sets
+  // final names = {'foo','bar','baz'};
+  // names.add('foo');
+  // names.add('bar');
+  // names.add('baz');
+
+  // const thing = {'foo',1};
+  // print(names);
+
+// MAP
+  var person = {
+    'age' : 20,
+    'name' : 'foo'
+  };
+
+  print(person);
+  
+  person['name']  = 'FOOOOO';
+  print(person);
+
 }
 
 void main() {
