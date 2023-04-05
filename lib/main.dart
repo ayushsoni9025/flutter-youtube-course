@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
-String getFullName(String firstName, String lastName) =>
-  '$firstName $lastName';
+String getFullName(String firstName, String lastName) => '$firstName $lastName';
 
-
-String printName(){
+String printName() {
   return '';
 }
 
-void test(){
+void test(
+  String? firstName,
+  String? middleName,
+  String? lastName,
+) {
 //   var age = 20;
 //   final halfOfAge = age/2;
 //   final doubleTheAge = age*2;
@@ -31,16 +33,37 @@ void test(){
   // print(names);
 
 // MAP
-  var person = {
-    'age' : 20,
-    'name' : 'foo'
-  };
+  // var person = {
+  //   'age' : 20,
+  //   'name' : 'foo'
+  // };
 
-  print(person);
-  
-  person['name']  = 'FOOOOO';
-  print(person);
+  // print(person);
 
+  // person['name']  = 'FOOOOO';
+  // print(person);
+
+  // sound null safety
+  // String? name = null;
+  // print(name);
+  // name = 'Ayush';
+  // print(name);
+
+  //list should be null not its value
+  // List<String>? name = ['foo', 'bar'];
+  // name = null;
+  // print(name);
+
+  //list should be null and also its value
+  // List<String?>? name = ['foo', 'bar', null];
+
+  //use of ?? operator carry picking non null value
+  const String? firstName = null;
+  const String? middleName = null;
+  const String? lastName = 'Soni';
+
+  final firstNonNullValue = firstName ?? middleName ?? lastName;
+  print(firstNonNullValue);
 }
 
 void main() {
@@ -53,8 +76,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    test();
-    print(getFullName('Ayush', 'Soni'));
+    test(null, '', null);
+    // print(getFullName('Ayush', 'Soni'));
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
