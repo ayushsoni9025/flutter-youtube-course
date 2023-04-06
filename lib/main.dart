@@ -6,11 +6,21 @@ String printName() {
   return '';
 }
 
-void test(
-  String? firstName,
-  String? middleName,
-  String? lastName,
-) {
+// enum PersonName { firstName, lastName, age }
+// enum AnimalType { cat, dog, rat }
+
+// class
+class Person {
+  void run() {
+    print("Running");
+  }
+
+  void breathe() {
+    print("Breathing");
+  }
+}
+
+void test() {
 //   var age = 20;
 //   final halfOfAge = age/2;
 //   final doubleTheAge = age*2;
@@ -58,12 +68,43 @@ void test(
   // List<String?>? name = ['foo', 'bar', null];
 
   //use of ?? operator carry picking non null value
-  const String? firstName = null;
-  const String? middleName = null;
-  const String? lastName = 'Soni';
+  // const String? firstName = null;
+  // const String? middleName = null;
+  // const String? lastName = 'Soni';
 
-  final firstNonNullValue = firstName ?? middleName ?? lastName;
-  print(firstNonNullValue);
+  // final firstNonNullValue = firstName ?? middleName ?? lastName;
+  // print(firstNonNullValue);
+
+  // null aware assignment operator // use of =? in this case
+  // String? name = firstName;
+  // name ??= middleName;
+  // name ??= lastName;
+  // print(name);
+
+  // null condition invocation
+  // final length = middleName?.length ?? 0;
+  // print(length);
+
+  //Enum
+  // print(PersonName.firstName);
+
+  // Switch Statement
+  // switch (animalType) {
+  //   case AnimalType.cat:
+  //     print("cat");
+  //     break;
+  //   case AnimalType.dog:
+  //     print("dog");
+  //     break;
+  //   case AnimalType.rat:
+  //     print("rat");
+  //     break;
+  // }
+
+  // creating class object
+  final person = Person(); //person is instent member of Person
+  person.run();
+  person.breathe();
 }
 
 void main() {
@@ -76,7 +117,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    test(null, '', null);
+    test();
     // print(getFullName('Ayush', 'Soni'));
     return MaterialApp(
       title: 'Flutter Demo',
