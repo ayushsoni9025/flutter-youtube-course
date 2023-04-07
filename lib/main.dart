@@ -43,22 +43,79 @@ String printName() {
 // class Cat extends LivingThing {}
 
 //factory class
-class Cat extends Object {
-  final String name;
-  Cat(this.name);
-  // factory Cat.foobar() {
-  //   return Cat('flubb Ball');
-  // }
+// class Cat extends Object {
+// class Cat {
+//   final String name;
+//   Cat(this.name);
+// factory Cat.foobar() {
+//   return Cat('flubb Ball');
+// }
 
-  // custom operator
-  @override
-  bool operator ==(covariant Cat other) => other.name == name;
+// custom operator
+// @override
+// bool operator ==(covariant Cat other) => other.name == name;
 
-  @override
-  int get hashCode => name.hashCode;
+// @override
+// int get hashCode => name.hashCode;
+//}
+
+//advance dart
+//extension
+// extension Run on Cat {
+//   void run() {
+//     print("$name  running");
+//   }
+// }
+
+// class Person {
+//   final String firstName;
+//   final String lastName;
+//   Person(this.firstName, this.lastName);
+// }
+
+// extension FullName on Person {
+//   String get fullName => '$firstName $lastName';
+// }
+
+// future
+// Future<int> A(int a) {
+//   return Future.delayed(const Duration(seconds: 3), () {
+//     return a * 2;
+//   });
+//}
+
+// Stream
+// Stream<String> getName() {
+//   // return Stream.value("foo");
+//   return Stream.periodic(const Duration(seconds: 1), (value) {
+//     return "foo";
+//   });
+// }
+
+// generator
+Iterable<int> getOneTwoThree() sync* {
+  yield 1;
+  yield 2;
+  yield 3;
 }
 
-void test() {
+void test() async {
+  // final result = await A(10);
+  // print(result);
+
+  //stream
+  // await for (final value in getName()) {
+  //   print(value);
+  // }
+  // print("stream is finised");
+
+  //generator
+  for (final value in getOneTwoThree()) {
+    print(value);
+  }
+}
+
+//void test() {
 //   var age = 20;
 //   final halfOfAge = age/2;
 //   final doubleTheAge = age*2;
@@ -66,105 +123,114 @@ void test() {
 //   print(halfOfAge);
 
 //list
-  // final name=['foo','bar','baz'];
-  // final length = name.length;
-  // name.add('Add');
-  // print(name.length);
+// final name=['foo','bar','baz'];
+// final length = name.length;
+// name.add('Add');
+// print(name.length);
 
-  //sets
-  // final names = {'foo','bar','baz'};
-  // names.add('foo');
-  // names.add('bar');
-  // names.add('baz');
+//sets
+// final names = {'foo','bar','baz'};
+// names.add('foo');
+// names.add('bar');
+// names.add('baz');
 
-  // const thing = {'foo',1};
-  // print(names);
+// const thing = {'foo',1};
+// print(names);
 
 // MAP
-  // var person = {
-  //   'age' : 20,
-  //   'name' : 'foo'
-  // };
+// var person = {
+//   'age' : 20,
+//   'name' : 'foo'
+// };
 
-  // print(person);
+// print(person);
 
-  // person['name']  = 'FOOOOO';
-  // print(person);
+// person['name']  = 'FOOOOO';
+// print(person);
 
-  // sound null safety
-  // String? name = null;
-  // print(name);
-  // name = 'Ayush';
-  // print(name);
+// sound null safety
+// String? name = null;
+// print(name);
+// name = 'Ayush';
+// print(name);
 
-  //list should be null not its value
-  // List<String>? name = ['foo', 'bar'];
-  // name = null;
-  // print(name);
+//list should be null not its value
+// List<String>? name = ['foo', 'bar'];
+// name = null;
+// print(name);
 
-  //list should be null and also its value
-  // List<String?>? name = ['foo', 'bar', null];
+//list should be null and also its value
+// List<String?>? name = ['foo', 'bar', null];
 
-  //use of ?? operator carry picking non null value
-  // const String? firstName = null;
-  // const String? middleName = null;
-  // const String? lastName = 'Soni';
+//use of ?? operator carry picking non null value
+// const String? firstName = null;
+// const String? middleName = null;
+// const String? lastName = 'Soni';
 
-  // final firstNonNullValue = firstName ?? middleName ?? lastName;
-  // print(firstNonNullValue);
+// final firstNonNullValue = firstName ?? middleName ?? lastName;
+// print(firstNonNullValue);
 
-  // null aware assignment operator // use of =? in this case
-  // String? name = firstName;
-  // name ??= middleName;
-  // name ??= lastName;
-  // print(name);
+// null aware assignment operator // use of =? in this case
+// String? name = firstName;
+// name ??= middleName;
+// name ??= lastName;
+// print(name);
 
-  // null condition invocation
-  // final length = middleName?.length ?? 0;
-  // print(length);
+// null condition invocation
+// final length = middleName?.length ?? 0;
+// print(length);
 
-  //Enum
-  // print(PersonName.firstName);
+//Enum
+// print(PersonName.firstName);
 
-  // Switch Statement
-  // switch (animalType) {
-  //   case AnimalType.cat:
-  //     print("cat");
-  //     break;
-  //   case AnimalType.dog:
-  //     print("dog");
-  //     break;
-  //   case AnimalType.rat:
-  //     print("rat");
-  //     break;
-  // }
+// Switch Statement
+// switch (animalType) {
+//   case AnimalType.cat:
+//     print("cat");
+//     break;
+//   case AnimalType.dog:
+//     print("dog");
+//     break;
+//   case AnimalType.rat:
+//     print("rat");
+//     break;
+// }
 
-  // creating class object
-  // final person = Person(); //person is instent member of Person
-  // person.run();
-  // person.breathe();
+// creating class object
+// final person = Person(); //person is instent member of Person
+// person.run();
+// person.breathe();
 
-  // final foo = Person("foo bar");
-  // foo.printName();
+// final foo = Person("foo bar");
+// foo.printName();
 
-  // inheritance object
-  // final fluffers = Cat();
-  // fluffers.move();
-  // fluffers.breath();
+// inheritance object
+// final fluffers = Cat();
+// fluffers.move();
+// fluffers.breath();
 
-  // factory object
-  // final fluffball = Cat.foobar();
-  // print(fluffball.name);
+// factory object
+// final fluffball = Cat.foobar();
+// print(fluffball.name);
 
-  // custom object
-  final cat1 = Cat('foo');
-  final cat2 = Cat('foo');
-  if (cat1 == cat2) {
-    print("cats are equal");
-  } else {
-    print("cats are not equal");
-  }
-}
+// custom object
+// final cat1 = Cat('foo');
+// final cat2 = Cat('foo');
+// if (cat1 == cat2) {
+//   print("cats are equal");
+// } else {
+//   print("cats are not equal");
+// }
+
+//Advance dart
+//Extension
+// final cat = Cat('flopper');
+// print(cat.name);
+// cat.run();
+
+// final person = Person("firstName", "lastName");
+// print(person.fullName);
+//}
 
 void main() {
   runApp(const MyApp());
