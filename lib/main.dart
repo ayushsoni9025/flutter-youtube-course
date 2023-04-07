@@ -21,13 +21,26 @@ String printName() {
 // }
 
 //class constructor
-class Person {
-  final String name;
-  Person(this.name);
-  void printName() {
-    print(name);
+// class Person {
+//   final String name;
+//   Person(this.name);
+//   void printName() {
+//     print(name);
+//   }
+// }
+
+// class inheritance
+class LivingThing {
+  void breath() {
+    print("breath");
+  }
+
+  void move() {
+    print("move");
   }
 }
+
+class Cat extends LivingThing {}
 
 void test() {
 //   var age = 20;
@@ -115,8 +128,13 @@ void test() {
   // person.run();
   // person.breathe();
 
-  final foo = Person("foo bar");
-  foo.printName();
+  // final foo = Person("foo bar");
+  // foo.printName();
+
+  // inheritance object
+  final fluffers = Cat();
+  fluffers.move();
+  fluffers.breath();
 }
 
 void main() {
