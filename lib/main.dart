@@ -43,12 +43,19 @@ String printName() {
 // class Cat extends LivingThing {}
 
 //factory class
-class Cat {
+class Cat extends Object {
   final String name;
   Cat(this.name);
-  factory Cat.foobar() {
-    return Cat('flubb Ball');
-  }
+  // factory Cat.foobar() {
+  //   return Cat('flubb Ball');
+  // }
+
+  // custom operator
+  @override
+  bool operator ==(covariant Cat other) => other.name == name;
+
+  @override
+  int get hashCode => name.hashCode;
 }
 
 void test() {
@@ -146,8 +153,17 @@ void test() {
   // fluffers.breath();
 
   // factory object
-  final fluffball = Cat.foobar();
-  print(fluffball.name);
+  // final fluffball = Cat.foobar();
+  // print(fluffball.name);
+
+  // custom object
+  final cat1 = Cat('foo');
+  final cat2 = Cat('foo');
+  if (cat1 == cat2) {
+    print("cats are equal");
+  } else {
+    print("cats are not equal");
+  }
 }
 
 void main() {
