@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 String getFullName(String firstName, String lastName) => '$firstName $lastName';
@@ -30,17 +31,25 @@ String printName() {
 // }
 
 // class inheritance
-class LivingThing {
-  void breath() {
-    print("breath");
-  }
+// class LivingThing {
+//   void breath() {
+//     print("breath");
+//   }
 
-  void move() {
-    print("move");
+//   void move() {
+//     print("move");
+//   }
+// }
+// class Cat extends LivingThing {}
+
+//factory class
+class Cat {
+  final String name;
+  Cat(this.name);
+  factory Cat.foobar() {
+    return Cat('flubb Ball');
   }
 }
-
-class Cat extends LivingThing {}
 
 void test() {
 //   var age = 20;
@@ -132,9 +141,13 @@ void test() {
   // foo.printName();
 
   // inheritance object
-  final fluffers = Cat();
-  fluffers.move();
-  fluffers.breath();
+  // final fluffers = Cat();
+  // fluffers.move();
+  // fluffers.breath();
+
+  // factory object
+  final fluffball = Cat.foobar();
+  print(fluffball.name);
 }
 
 void main() {
