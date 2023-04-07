@@ -10,13 +10,22 @@ String printName() {
 // enum AnimalType { cat, dog, rat }
 
 // class
-class Person {
-  void run() {
-    print("Running");
-  }
+// class Person {
+//   void run() {
+//     print("Running");
+//   }
 
-  void breathe() {
-    print("Breathing");
+//   void breathe() {
+//     print("Breathing");
+//   }
+// }
+
+//class constructor
+class Person {
+  final String name;
+  Person(this.name);
+  void printName() {
+    print(name);
   }
 }
 
@@ -102,9 +111,12 @@ void test() {
   // }
 
   // creating class object
-  final person = Person(); //person is instent member of Person
-  person.run();
-  person.breathe();
+  // final person = Person(); //person is instent member of Person
+  // person.run();
+  // person.breathe();
+
+  final foo = Person("foo bar");
+  foo.printName();
 }
 
 void main() {
